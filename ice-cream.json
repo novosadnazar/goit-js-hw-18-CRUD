@@ -1,0 +1,84 @@
+{
+  "ice-cream": [
+    {
+      "title": "Ванільне",
+      "calories": 180,
+      "price": 45,
+      "description": "Класичне ніжне ванільне морозиво зі свіжих вершків.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/I_scream_You_Scream_%28Unsplash%29.jpg/250px-I_scream_You_Scream_%28Unsplash%29.jpg",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "title": "Шоколадне морозиво",
+      "image": "https://lodmar.com.ua/image/cache/catalog/product1/%20%D0%BE%D0%B1%D0%BB%D0%B0%D0%B4%D0%BD%D0%B0%D0%BD%D0%BD%D1%8F/Taylor/%20%D0%B4%D0%BB%D1%8F%20%D0%BC%E2%80%99%D1%8F%D0%BA%D0%BE%D0%B3%D0%BE%20%D0%BC%D0%BE%D1%80%D0%BE%D0%B7%D0%B8%D0%B2%D0%B0%20(%D0%9F%D0%BE%D0%BB%D1%86%D0%BD%D0%B8%D1%86%D1%8F)-600x600.jpg",
+      "price": 50,
+      "calories": 210,
+      "description": "Насичений шоколадний смак з натуральним какао."
+    },
+    {
+      "id": "3",
+      "title": "Полуничне морозиво",
+      "image": "https://lemix.com.ua/image/cache/catalog/icecream/icecream-plombir-600x600.jpg",
+      "price": 47,
+      "calories": 170,
+      "description": "Морозиво з додаванням свіжої полуниці та ягідного пюре."
+    },
+    {
+      "id": "4",
+      "title": "Бананове морозиво",
+      "image": "https://zamorozka24.com.ua/image/cache/catalog/morozyvo/limo-new/Morozhenoe-eskymo-Bezlaktoznoe-Vanyl-v-kon%20dyterskoj-glaz%20ury-10-v-70g-g%20-Torgovaya-marka-Limo-2-756x800.png",
+      "price": 49,
+      "calories": 190,
+      "description": "Солодкий банановий смак з вершковою текстурою."
+    },
+    {
+      "id": "5",
+      "title": "М'ятне морозиво з шоколадом",
+      "image": "https://agropolit.com/media/news/o-o-w/00/08/8770/ya-13062.jpg",
+      "price": 55,
+      "calories": 200,
+      "description": "Освіжаюча м'ята та шматочки темного шоколаду."
+    },
+    {
+      "id": "6",
+      "title": "Солона карамель",
+      "image": "https://static.ukrinform.com/photos/2018_05/thumb_files/630_360_1526921948-1764.jpg",
+      "price": 58,
+      "calories": 230,
+      "description": "Топлені вершки, карамель та легка солоність для балансу."
+    },
+    {
+      "id": "7",
+      "title": "Фісташкове морозиво",
+      "image": "https://lh6.googleusercontent.com/proxy/eGREYze32VQ9pBKpfPQTt5b4uhtig1bCPlp9MXUdfdowCXEalq6LjWDYQYCLn2RKqN4tLDUHummoeUKe9i5N1izJ64qFDTZpbEK9Qs0yv1EXkjl0T2d6lBBNoxmCg4LLUynLGjzNQA",
+      "price": 62,
+      "calories": 240,
+      "description": "Морозиво з натуральною пастою справжніх фісташок."
+    },
+    {
+      "id": "8",
+      "title": "Чорничне морозиво",
+      "image": "https://agropolit.com/media/news/o-o-w/00/12/12745/gelato-18050.jpg",
+      "price": 52,
+      "calories": 175,
+      "description": "Ароматні чорниці, свіже ягідне пюре та ніжний смак."
+    },
+    {
+      "id": "9",
+      "title": "Мангове морозиво",
+      "image": "https://rud.ua/uploads/useful_info/content/5cc173d395131.jpg",
+      "price": 60,
+      "calories": 195,
+      "description": "Екзотичний смак стиглого манго з легкою кислинкою."
+    },
+    {
+      "title": "пломбір",
+      "calories": 333,
+      "price": 70,
+      "description": "смачне",
+      "image": "https://lemix.com.ua/image/cache/catalog/icecream/icecream-plombir-600x600.jpg",
+      "id": "5196"
+    }
+  ]
+}

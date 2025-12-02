@@ -1,0 +1,23 @@
+{
+  "name": "goit-js-hw-18-crud",
+  "version": "1.0.0",
+  "description": "",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "dev": "npx parcel src/index.html",
+    "build": "parcel build src/index.html --public-url /goit-js-hw-18-crud/",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "server": "json-server --watch ice-cream.json --port 3000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "parcel": "^2.16.1"
+  },
+  "dependencies": {
+    "json-server": "^1.0.0-beta.3"
+  }
+}
