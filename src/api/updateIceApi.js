@@ -1,5 +1,5 @@
 
-export const updateIceApi = (id, icecrem) => {
+export const updateIceApi = async (id, icecrem) => {
   const options = {
     method: "PUT",
     body: JSON.stringify(icecrem),
@@ -8,7 +8,7 @@ export const updateIceApi = (id, icecrem) => {
     },
   };
 
-  return fetch(`http://localhost:3000/ice-cream/${id}`, options).then((res) =>
-    res.json()
-  );
+  const res = await fetch(`http://localhost:3000/ice-cream/${id}`, options);
+return res.json()
+
 };

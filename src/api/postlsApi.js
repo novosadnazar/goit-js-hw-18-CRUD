@@ -1,5 +1,5 @@
 
-export const postIceApi = (icecrem) => {
+export const postIceApi = async (icecrem) => {
   const options = {
     method: "POST",
     body: JSON.stringify(icecrem),
@@ -7,8 +7,6 @@ export const postIceApi = (icecrem) => {
       "Content-Type": "application/json",
     },
   };
-
-  return fetch("http://localhost:3000/ice-cream", options).then((res) =>
-    res.json()
-  );
+const res = await fetch("http://localhost:3000/ice-cream", options);
+return res.json()
 };
