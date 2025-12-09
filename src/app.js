@@ -30,7 +30,7 @@ openBtn.addEventListener("click", () => {
 });
 
 
-formRef.addEventListener("submit", (evt) => {
+formRef.addEventListener("submit", async (evt) => {
   evt.preventDefault();
 
   const { title, calories, price, description, image } = evt.target.elements;

@@ -57,12 +57,12 @@
       "description": "Морозиво з натуральною пастою справжніх фісташок."
     },
     {
-      "id": "8",
       "title": "Чорничне морозиво",
-      "image": "https://agropolit.com/media/news/o-o-w/00/12/12745/gelato-18050.jpg",
-      "price": 52,
       "calories": 175,
-      "description": "Ароматні чорниці, свіже ягідне пюре та ніжний смак."
+      "price": 52,
+      "description": "Ароматні чорниці, свіже ягідне пюре та ніжний смак.",
+      "image": "https://agropolit.com/media/news/o-o-w/00/12/12745/gelato-18050.jpg",
+      "id": "8"
     },
     {
       "id": "9",
@@ -71,14 +71,6 @@
       "price": 60,
       "calories": 195,
       "description": "Екзотичний смак стиглого манго з легкою кислинкою."
-    },
-    {
-      "title": "пломбір",
-      "calories": 333,
-      "price": 70,
-      "description": "смачне",
-      "image": "https://lemix.com.ua/image/cache/catalog/icecream/icecream-plombir-600x600.jpg",
-      "id": "5196"
     }
   ]
 }
