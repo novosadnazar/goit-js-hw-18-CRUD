@@ -10,8 +10,7 @@ const formRef = document.querySelector(".modal_form");
 const backdrop = document.querySelector(".bakdrop");
 const openBtn = document.querySelector(".open_modal");
 
-let editCardId = null; 
-
+let editCardId = null; //якщо тут null то додаємо картку, якщо число то будемо редагувати
 
 function openModal() {
   backdrop.style.opacity = "1";
@@ -25,17 +24,16 @@ function closeModal() {
 
 openBtn.addEventListener("click", () => {
   editCardId = null;
-  formRef.reset();
+  formRef.reset(); // очищає поля форми
   openModal();
 });
 
-
+// submit form
 formRef.addEventListener("submit", async (evt) => {
   evt.preventDefault();
 
   const { title, calories, price, description, image } = evt.target.elements;
 
-  
   const data = {
     title: title.value.trim(),
     calories: Number(calories.value.trim()),
@@ -44,82 +42,89 @@ formRef.addEventListener("submit", async (evt) => {
     image: image.value.trim(),
   };
 
+  try {
+    if (editCardId === null) {
+      await postIceApi(data);
+    } else {
+      await updateIceApi(editCardId, data);
+    }
 
-  if (
-    Object.values(data).some(
-      (val) => val === "" || isNaN(data.calories) || isNaN(data.price)
-    )
-  ) {
-    alert("Будь ласка, заповніть усі поля коректно.");
-    return;
+    const updateList = await getIceApi();
+    listEl.innerHTML = createItemsMarkup(updateList);
+    formRef.reset();
+    closeModal();
+  } catch (error) {
+    console.log(error);
   }
 
- 
-  if (editCardId === null) {
-    
-    postIceApi(data)
-      .then(getIceApi) 
-      .then((res) => {
-        listEl.innerHTML = createItemsMarkup(res);
-        formRef.reset();
-        closeModal();
-      })
-      .catch((err) => console.error("Помилка POST-запиту:", err));
-    return;
-  }
-
-
-  updateIceApi(editCardId, data)
-    .then(() => getIceApi()) 
-    .then((res) => {
-      listEl.innerHTML = createItemsMarkup(res);
-      formRef.reset();
-      closeModal();
-    })
-    .catch((err) => console.error("Помилка PUT-запиту:", err));
+  // if (editCardId === null) {
+  //    postIceApi(data)
+  //      .then(getIceApi)
+  //      .then((res) => {
+  //        listEl.innerHTML = createItemsMarkup(res);
+  //        formRef.reset();
+  //        closeModal();
+  //      });
+  //   return;
+  // };
+  // updateIceApi(editCardId, data).then(() => getIceApi()).then(res => {
+  //   listEl.innerHTML = createItemsMarkup(res);
+  //   formRef.reset()
+  //   closeModal()
+  // })
 });
 
-
-
-listEl.addEventListener("click", (event) => {
-  const listItem = event.target.closest("li");
-  if (!listItem) return;
-  const itemId = listItem.id;
-
-  
+// delete card
+listEl.addEventListener("click", async (event) => {
   if (event.target.dataset.action === "Delete") {
-    delIceApi(itemId)
-      .then(getIceApi)
-      .then((res) => {
-        listEl.innerHTML = createItemsMarkup(res);
-      })
-      .catch((err) => console.error("Помилка DELETE-запиту:", err));
+    const itemId = event.target.closest("li").id;
+
+    await delIceApi(itemId)
+    const res = await getIceApi()
+    listEl.innerHTML = createItemsMarkup(res);
+      // .then(getIceApi)
+      // .then((res) => {
+      //   listEl.innerHTML = createItemsMarkup(res);
+      // });
   }
 
 
   if (event.target.dataset.action === "Edit") {
-    getIceApi()
-      .then((res) => {
-        const card = res.find((el) => el.id === itemId); 
-        if (!card) return;
+    const idItems = event.target.closest("li").id; // string
+    const res = await getIceApi()
+    
+        const card = res.find((el) => el.id == idItems); // знайдемо по id
+        if (!card) return; // безпечна перевірка
 
-      
         formRef.elements.title.value = card.title || "";
         formRef.elements.calories.value = card.calories || "";
         formRef.elements.price.value = card.price || "";
         formRef.elements.description.value = card.description || "";
         formRef.elements.image.value = card.image || "";
 
-        editCardId = card.id; 
+        editCardId = card.id; // тепер редагуємо саме цю картку
         openModal();
-      })
-   
   }
 });
 
+// initial load
+// getIceApi().then((res) => {
+//   listEl.innerHTML = createItemsMarkup(res);
+// });
 
-getIceApi()
-  .then((res) => {
-    listEl.innerHTML = createItemsMarkup(res);
-  })
+// async function load() {
+//   const data = await getIceApi();
+//   listEl.innerHTML = createItemsMarkup(data);
+// }
+// load()
+
+
+(async () => {
+  try {
+    const data = await getIceApi();
+   listEl.innerHTML = createItemsMarkup(data);
+  } catch (error) {
+    console.log(error);
+  }
+})()
  
